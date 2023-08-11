@@ -80,7 +80,7 @@
 #image{
    
     /* f1 car */
-    position: absolute;
+    position:static;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -129,8 +129,10 @@
 }
 #imgmlb{
     /* MLB LOGO */
+    padding: 3px;
     position: absolute;
-    top: 140%;
+    align-items: center;
+    top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
