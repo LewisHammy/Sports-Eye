@@ -14,10 +14,11 @@
 {
     height: 100vh;
     width: 100%;
-    position: relative;
+    position: absolute;
     top: 0;
     left: 0;
     background: #e9e9eb;
+    height: calc(100vh - 90px);
 }
 #container #logo{
     position: absolute;
@@ -39,6 +40,8 @@
     background: #fdfefe;
     display: grid;
     place-items: center;
+    background: rgba(255, 255, 255, 0.9); /* Add a semi-transparent background */
+    backdrop-filter: blur(10px); /* Apply blur effect */
 }
 #navbar ul{
     list-style: none;
@@ -76,17 +79,6 @@
     color: #000;
 }
 
-/* Fromula One Car */
-#image{
-   
-    /* f1 car */
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-} 
-
 /* Icons */
 #icons{
     height: 500px;
@@ -121,17 +113,5 @@
     transition: 1s;
 }
 
-.MLB{
-    /* Needs space from top of background color */
-    /* Images needs to be smaller */
-    text-align: center;
-    margin: 10px;
+#api-data {
 }
-#imgmlb{
-    /* MLB LOGO */
-    position: absolute;
-    top: 140%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-} 
