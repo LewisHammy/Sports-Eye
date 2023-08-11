@@ -17,7 +17,7 @@
     position: relative;
     top: 0;
     left: 0;
-    background: #e9e9eb;
+    /* background: #e9e9eb; */
 }
 #container #logo{
     position: absolute;
@@ -36,7 +36,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background: #fdfefe;
+    background: #ffffffd5;
     display: grid;
     place-items: center;
 }
@@ -84,7 +84,6 @@
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    position: absolute;
 } 
 
 /* Icons */
@@ -125,12 +124,22 @@
     /* Needs space from top of background color */
     /* Images needs to be smaller */
     text-align: center;
+    color:white
 }
 #imgmlb{
     /* MLB LOGO */
     position: absolute;
+    align-content: center;
     top: 140%;
     left: 50%;
     transform: translate(-50%, -50%);
-    position: absolute;
 } 
+
+/* #imageFerrari{
+   
+     f1 car
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} */
