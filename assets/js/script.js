@@ -1,3 +1,6 @@
+var settings = document.getElementById('settingsGear');
+
+
 // Needs to be fixed
 // smooth scrolling
 document.querySelectorAll('navbar ul li a').forEach(link => {
@@ -7,3 +10,18 @@ document.querySelectorAll('navbar ul li a').forEach(link => {
       target.scrollIntoView({ behavior: 'smooth' });
     });
   });
+
+
+  function openSettings() {
+    document.getElementById('popup-container').style.display = 'block';
+    document.getElementById('overlay').style.display = 'block';
+    console.log('opened');
+  }
+  
+  function closeSettings() {
+    document.getElementById('popup-container').style.display = 'none';
+    document.getElementById('overlay').style.display = 'none';
+    console.log('closed');
+  }
+
+  settings.addEventListener('click', openSettings);
