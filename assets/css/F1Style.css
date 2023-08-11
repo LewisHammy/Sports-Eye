@@ -132,5 +132,9 @@
     top: 140%;
     left: 50%;
     transform: translate(-50%, -50%);
-    position: absolute;
 } 
+#driversStandingsButton{
+    position: absolute;
+    top: 65%;
+    left: 46%;
+}

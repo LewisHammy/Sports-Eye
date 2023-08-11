@@ -113,5 +113,24 @@
     transition: 1s;
 }
 
+
 #api-data {
 }
+=======
+.MLB{
+    /* Needs space from top of background color */
+    /* Images needs to be smaller */
+    text-align: center;
+    margin: 10px;
+}
+#imgmlb{
+    /* MLB LOGO */
+    padding: 3px;
+    position: absolute;
+    align-items: center;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+} 
+
