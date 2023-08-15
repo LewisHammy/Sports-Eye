@@ -19,6 +19,7 @@
     left: 0;
     /* background: #e9e9eb; */
 }
+
 #container #logo{
     position: absolute;
     left: 8%;
@@ -36,22 +37,27 @@
     position: absolute;
     top: 0;
     left: 0;
-        display: grid;
+    display: grid;
     place-items: center;
 }
+
+
 #navbar ul{
     list-style: none;
     display: flex;
     flex-direction: row;
 }
+
 #navbar ul li{
     font-size: 20px;
     margin: 0 45px;
 }
+
 #navbar ul li a{
     text-decoration: none;
     color: #000;
 }
+
 #navbar ul li a:hover{
     color: var(--one);
 }
@@ -68,19 +74,23 @@
     background: var(--f1);
     border-radius: 10px 20px;
 }
+
 #navbar ul #login a{
     /* color: #ffffff; */
 }
+
 #navbar ul #login :hover{
     color: #000;
 }
 
 .navBkgn {
     background: #ffffff;
+    border-bottom: 3px solid #dddccb9d;
 }
 
 .navDark {
     background: #999999e0;
+    border-bottom: 3px solid black;
 }
 
 /* Fromula One Car */
@@ -108,10 +118,12 @@
     flex-direction: column;
     z-index: 998;
 }
+
 #icons:hover{
     background: var(--f1);
     transition: 1s;
 }
+
 #icons a{
     text-decoration: none;
     height: 40px;
@@ -122,6 +134,7 @@
     place-items: center;
     margin: 30px 0
 }
+
 #icons a:hover{
     color: #333;
     transition: 1s;
@@ -133,6 +146,7 @@
     text-align: center;
     color:white
 }
+
 #imgmlb{
     /* MLB LOGO */
     position: absolute;
@@ -164,7 +178,6 @@
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     z-index: 9999;
-
   }
 
    /* Overlay behind settings container */
@@ -212,8 +225,8 @@
   /* } */
   
 
-  #toggle-btn:hover {
+#toggle-btn:hover {
     cursor: pointer;
     opacity: 0.8;
-  }
+}
 
