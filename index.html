@@ -26,7 +26,8 @@
         <div id="logo">Sports Eye</div>
        
         <!-- Navigation Bar -->
-        <div id="navbar">
+    
+        <div id="navbar" class="navBkgn">
             <ul>
                 <li><a href="./index.html">HOME</a></li>
                 <li><a href="./F1Page.html">FORMULA 1</a></li>
@@ -36,23 +37,26 @@
                 <li id="login"><a href="#">LOGIN</a></li>
             </ul>
         </div>
+    
 
-        <!-- Icons -->
-        <div id="icons">
-        <a href="#"><i class="fa-solid fa-bell"></i></a>
-        <a href="#"> <i class="fa-solid fa-comment"></i></a>
-        <a href="#"><i class="fa-solid fa-calendar-days"></i></a>
-        <!-- <a href="#"><i class="fa-brands fa-youtube"></i></a> -->
-        <a href="#"><i id="settingsGear" class="fa-solid fa-gear"></i></a>
-        
-        <div id="popup-container" class="popup-container">
-        <!-- Add your settings content here -->
-        <h1>Settings</h1>
-        <button id="closeSettings" onclick="closeSettings()">Close</button>
-      </div>
-      
-      <div id="overlay" class="overlay"></div>
+        <div id="theme">    
+            <!-- Icons -->
+            <div id="icons">
+            <a href="#"><i class="fa-solid fa-bell"></i></a>
+            <a href="#"> <i class="fa-solid fa-comment"></i></a>
+            <a href="#"><i class="fa-solid fa-calendar-days"></i></a>
+            <!-- <a href="#"><i class="fa-brands fa-youtube"></i></a> -->
+            <a href="#"><i id="settingsGear" class="fa-solid fa-gear"></i></a>
+            
+            <div id="popup-container" class="popup-container">
+            <!-- Add your settings content here -->
+            <h1>Settings</h1>
+            <button class="settingsBtn" id="toggle-btn">Dark-Mode</button>
+            <button class="settingsBtn" id="closeSettings" onclick="closeSettings()">Close</button>
+            </div">
         </div>
+        <div id="overlay" class="overlay"></div>
+            </div>
 
     <!-- Image -->
 
