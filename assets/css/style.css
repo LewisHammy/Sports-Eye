@@ -36,8 +36,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background: #ffffffd5;
-    display: grid;
+        display: grid;
     place-items: center;
 }
 #navbar ul{
@@ -70,10 +69,18 @@
     border-radius: 10px 20px;
 }
 #navbar ul #login a{
-    color: #e9e9eb;
+    /* color: #ffffff; */
 }
 #navbar ul #login :hover{
     color: #000;
+}
+
+.navBkgn {
+    background: #ffffff;
+}
+
+.navDark {
+    background: #999999e0;
 }
 
 /* Fromula One Car */
@@ -145,7 +152,7 @@
 } */
 
 
-/* Pop-up container */
+/* settings container container */
 .popup-container {
     display: none;
     position: fixed;
@@ -160,7 +167,7 @@
 
   }
 
-   /* Overlay */
+   /* Overlay behind settings container */
 .overlay {
     display: none;
     position: fixed;
@@ -172,3 +179,41 @@
     z-index: 9998;
     display: none;
   }
+  
+
+#theme {
+    width: 100vw;
+    height: 100vh;
+}
+    
+    
+.darkModeTheme {
+    background: #0000003d;
+    color: #000000;
+}
+
+
+/* set colors for dark mode */
+.darkModeToggle {
+    background: #000000;
+    color: #fff;
+}
+
+
+.settingsBtn {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bolder;
+    padding: 0.5em;
+}
+
+
+  /* #toggle-btn { */
+  /* } */
+  
+
+  #toggle-btn:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+
