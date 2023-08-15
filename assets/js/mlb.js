@@ -1,5 +1,7 @@
 // Function to fetch and display API data
 async function fetchData() {
+    console.log("Fetching data...");
+
     const url = 'https://sports-live-scores.p.rapidapi.com/baseball/live';
     const options = {
         method: 'GET',
@@ -17,22 +19,46 @@ async function fetchData() {
         const matches = jsonObject.matches;
 
         const apiDataDiv = document.getElementById("api-data");
-        for (const match of matches) {
+        apiDataDiv.innerHTML = ''; // Clear previous data
+
+        let currentRow = 1;
+        let currentColumn = 1;
+        for (let i = 0; i < matches.length; i++) {
+            if (currentColumn > 5) {
+                currentColumn = 1;
+                currentRow++;
+            }
+
+            if (currentColumn === 1) {
+                const newRow = document.createElement("div");
+                newRow.classList.add("row");
+                newRow.id = "row" + currentRow;
+                apiDataDiv.appendChild(newRow);
+            }
+
+            const match = matches[i];
             const matchDiv = document.createElement("div");
+            matchDiv.classList.add("column");
             matchDiv.innerHTML = `
-                <p>Away Team: ${match["Away Team"]}</p>
-                <p>Home Team: ${match["Home Team"]}</p>
+                <p>Away Team: ${match["Away Team"]}: ${match["Away Score"]}</p>
+                <p>Home Team: ${match["Home Team"]}: ${match["Away Score"]}</p>
                 <p>Status: ${match["Status"]}</p>
-                <hr>
+                <br>
             `;
-            apiDataDiv.appendChild(matchDiv);
+
+            const currentRowElement = document.getElementById("row" + currentRow);
+            currentRowElement.appendChild(matchDiv);
+
+            currentColumn++;
         }
     } catch (error) {
         console.error(error);
     }
 }
 
-// Call the fetchData function when the document is ready
 document.addEventListener("DOMContentLoaded", function () {
-    fetchData();
+    const liveScoresButton = document.getElementById("live-scores-button");
+    liveScoresButton.addEventListener("click", function () {
+        fetchData();
+    });
 });
