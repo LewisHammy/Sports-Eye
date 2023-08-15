@@ -25,3 +25,4 @@ document.querySelectorAll('navbar ul li a').forEach(link => {
   }
 
   settings.addEventListener('click', openSettings);
+  
