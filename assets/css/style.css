@@ -76,20 +76,21 @@
 }
 
 #navbar ul #login a{
-    /* color: #ffffff; */
+    color: #ffffff;
 }
 
 #navbar ul #login :hover{
     color: #000;
 }
 
+/* dark mode settings */
 .navBkgn {
     background: #ffffff;
     border-bottom: 3px solid #dddccb9d;
 }
 
 .navDark {
-    background: #999999e0;
+    background: #6e6e6e86;
     border-bottom: 3px solid black;
 }
 
@@ -201,7 +202,7 @@
     
     
 .darkModeTheme {
-    background: #0000003d;
+    background: #5252523d;
     color: #000000;
 }
 
