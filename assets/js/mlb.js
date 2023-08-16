@@ -153,20 +153,6 @@ async function fetchData() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    const liveScoresButton = document.getElementById("live-scores-button");
-    liveScoresButton.addEventListener("click", function () {
-        fetchData();
-    });
-});
-
-
-
-
-
-
-
-
 // Needs to be fixed
 // smooth scrolling
 document.querySelectorAll('navbar ul li a').forEach(link => {
