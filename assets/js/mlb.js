@@ -5,7 +5,97 @@ var navbar = document.getElementById("navbar");
 let darkMode = localStorage.getItem("dark-mode");
 
 
-// Function to fetch and display API data
+document.addEventListener('DOMContentLoaded', function () {
+    const columns = document.querySelectorAll('.column');
+    const savedContentBox = document.getElementById('saved-content-box');
+    const liveScoresButton = document.getElementById('live-scores-button');
+    const refreshScoresButton = document.createElement('button');
+    refreshScoresButton.textContent = 'Refresh Scores';
+    refreshScoresButton.classList.add('refresh-scores-button');
+
+    const apiData = document.getElementById('api-data');
+
+    columns.forEach((column, index) => {
+        column.addEventListener('click', function () {
+            // Check if clicked element is a button, and exclude its content
+            if (!column.classList.contains('button')) {
+                const content = column.innerHTML;
+                localStorage.setItem(`column_${index}`, content);
+            }
+        });
+    });
+
+    liveScoresButton.addEventListener('click', async function () {
+        await fetchData();
+
+        // Create and append the "Save Data" button
+        const saveDataButton = document.createElement('button');
+        saveDataButton.textContent = 'Save Data';
+        saveDataButton.classList.add('save-data-button', 'button-style');
+    
+    // Clone the content of api-data div without the buttons
+    const apiDataContentClone = apiData.cloneNode(true);
+    const saveButtonToRemove = apiDataContentClone.querySelector('.save-data-button');
+    const refreshButtonToRemove = apiDataContentClone.querySelector('.refresh-scores-button');
+    if (saveButtonToRemove) {
+        apiDataContentClone.removeChild(saveButtonToRemove);
+    }
+    if (refreshButtonToRemove) {
+        apiDataContentClone.removeChild(refreshButtonToRemove);
+    }
+
+        saveDataButton.addEventListener('click', function () {
+            const apiDataContent = apiDataContentClone.innerHTML;
+            localStorage.setItem('api_data', apiDataContent);
+
+            // Display saved content in the saved-content-box
+            const savedContentDiv = document.createElement('div');
+            savedContentDiv.classList.add('saved-content');
+            savedContentDiv.innerHTML = apiDataContent;
+            savedContentBox.appendChild(savedContentDiv);
+        });
+
+        // Remove existing "Save Data" button before appending
+        const existingSaveDataButton = apiData.querySelector('.save-data-button');
+        if (existingSaveDataButton) {
+            existingSaveDataButton.remove();
+        }
+
+        apiData.appendChild(saveDataButton);
+
+        // Append the "Refresh Scores" button
+        apiData.appendChild(refreshScoresButton);
+    });
+
+    refreshScoresButton.addEventListener('click', async function () {
+        await fetchData();
+    });
+
+    refreshScoresButton.textContent = 'Refresh Scores';
+    refreshScoresButton.classList.add('refresh-scores-button', 'button-style', 'button-spacing');
+
+    // Load content from local storage on page load
+    columns.forEach((column, index) => {
+        const content = localStorage.getItem(`column_${index}`);
+        if (content) {
+            column.innerHTML = content;
+        }
+    });
+
+    // Load saved API data content from local storage
+    const savedApiData = localStorage.getItem('api_data');
+    if (savedApiData) {
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = savedApiData;
+
+        const apiDataDiv = document.getElementById('api-data');
+        const savedApiDataRows = tempDiv.querySelectorAll('.row');
+        savedApiDataRows.forEach(row => {
+            apiDataDiv.appendChild(row);
+        });
+    }
+});
+
 async function fetchData() {
     console.log("Fetching data...");
 
@@ -47,8 +137,8 @@ async function fetchData() {
             const matchDiv = document.createElement("div");
             matchDiv.classList.add("column");
             matchDiv.innerHTML = `
-                <p>Away Team: ${match["Away Team"]}: ${match["Away Score"]}</p>
-                <p>Home Team: ${match["Home Team"]}: ${match["Away Score"]}</p>
+                <p>Away: ${match["Away Team"]}: ${match["Away Score"]}</p>
+                <p>Home: ${match["Home Team"]}: ${match["Home Score"]}</p>
                 <p>Status: ${match["Status"]}</p>
                 <br>
             `;
@@ -62,20 +152,6 @@ async function fetchData() {
         console.error(error);
     }
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-    const liveScoresButton = document.getElementById("live-scores-button");
-    liveScoresButton.addEventListener("click", function () {
-        fetchData();
-    });
-});
-
-
-
-
-
-
-
 
 // Needs to be fixed
 // smooth scrolling

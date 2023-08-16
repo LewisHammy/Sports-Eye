@@ -124,10 +124,6 @@
     transition: 1s;
 }
 
-
-#api-data {
-}
-
 .MLB{
     /* Needs space from top of background color */
     /* Images needs to be smaller */
@@ -168,13 +164,15 @@
 }
 
 .row {
-    margin: -10px;
-     /* Negative margin to offset padding inside columns */
+    margin: 10px -10px; /* Add spacing between rows using negative margins */
 }
 
 .column {
     flex: 1;
-    margin: 10px; /* Add some spacing between columns */
+    margin: 10px;
+    border: 1px solid black; /* Add a black border */
+    border-radius: 10px; /* Add rounded edges */
+    padding: 10px; /* Add padding for spacing within the column */
 }
 /* Style the "Live Scores" button */
 #live-scores-button {
@@ -251,3 +249,24 @@
     opacity: 0.8;
 }
 
+
+.column p:nth-child(1) {
+    color: red;
+}
+
+.column p:nth-child(2) {
+    color: blue;
+}
+
+.button-style {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-spacing {
+    margin-left: 20px; /* Adjust the value as needed for desired spacing */
+}
