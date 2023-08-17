@@ -182,6 +182,7 @@ document.querySelectorAll('navbar ul li a').forEach(link => {
   function enableDarkMode() {
     theme.classList.add("darkModeTheme");
     toggleBtn.classList.remove("darkModeToggle");
+    toggleBtn.innerHTML= "Light Mode";
     navbar.classList.add("navDark");
     navbar.classList.remove("navBkgn");
     localStorage.setItem("dark-mode", "enabled");
@@ -190,6 +191,7 @@ document.querySelectorAll('navbar ul li a').forEach(link => {
   function disableDarkMode() {
     theme.classList.remove("darkModeTheme");
     toggleBtn.classList.add("darkModeToggle");
+    toggleBtn.innerHTML= "Dark Mode";
     navbar.classList.remove("navDark");
     navbar.classList.add("navBkgn");
     localStorage.setItem("dark-mode", "disabled");

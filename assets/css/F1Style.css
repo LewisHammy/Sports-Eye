@@ -144,11 +144,23 @@
     left: 50%;
     transform: translate(-50%, -50%);
 } 
+
 #driversStandingsButton{
     position: absolute;
     top: 65%;
-    left: 46%;
+    left: 45%;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
+
+.ButtonShadow:hover {
+    box-shadow: 0 10px 15px 0 rgba(0,0,0,0.20),0 15px 50px 0 rgba(0,0,0,0.20);
+}
+
   #driversStandings {
     display: flex;
     flex-direction: column;
@@ -237,3 +249,6 @@
     opacity: 0.8;
 }
 
+.settingsTitle {
+    padding-bottom: 10px;
+}
