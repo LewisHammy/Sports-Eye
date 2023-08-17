@@ -18,6 +18,9 @@
     top: 0;
     left: 0;
     /* background: #e9e9eb; */
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center
 }
 
 #container #logo{
@@ -93,6 +96,7 @@
     background: #6e6e6e86;
     border-bottom: 3px solid black;
 }
+
 
 /* Fromula One Car */
 #image{
