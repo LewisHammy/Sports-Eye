@@ -239,6 +239,7 @@
     height: 100vh; /* Make the div take up the full viewport height */
     text-align: left;
 }
+
 #api-data {
     position: fixed;
     top: 0;
@@ -270,4 +271,8 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.settingsTitle {
+    padding-bottom: 10px;
 }

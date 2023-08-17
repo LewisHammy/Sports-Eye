@@ -96,7 +96,7 @@
     width: 65px;
     position: absolute;
     left: 0;
-    top: calc(50% - 250px);
+    top: calc(56% - 254px);
     background: #000;
     border-radius: 0 60px 60px 0;
     display: flex;
@@ -184,6 +184,9 @@
     cursor: pointer;
 }
 
+.ButtonShadow:hover {
+    box-shadow: 10px 15px 15px 0 rgba(0,0,0,0.20),0 15px 50px 0 rgba(0,0,0,0.20);
+}
 
 /* settings container container */
 .popup-container {
@@ -269,4 +272,8 @@
 
 .button-spacing {
     margin-left: 20px; /* Adjust the value as needed for desired spacing */
+}
+
+.settingsTitle {
+    padding-bottom: 10px;
 }
